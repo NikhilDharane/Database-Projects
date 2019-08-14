@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/TR/REC-html40">
+<Worksheet ss:Name="Table1">
+	<Table>
+		<Column ss:Index="1" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="2" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="4" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="5" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="7" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="8" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="9" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="10" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="11" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="12" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Row>
+			<Cell><Data ss:Type="String">Match_id</Data></Cell>
+			<Cell><Data ss:Type="String">MATCHID</Data></Cell>
+			<Cell><Data ss:Type="String">CLient_ID</Data></Cell>
+			<Cell><Data ss:Type="String">Cat_ID</Data></Cell>
+			<Cell><Data ss:Type="String">Strategy_ID</Data></Cell>
+			<Cell><Data ss:Type="String">Parameter_Value</Data></Cell>
+			<Cell><Data ss:Type="String">Stock_Name</Data></Cell>
+			<Cell><Data ss:Type="String">Ticker_symbol</Data></Cell>
+			<Cell><Data ss:Type="String">Cat_Id</Data></Cell>
+			<Cell><Data ss:Type="String">Risk</Data></Cell>
+			<Cell><Data ss:Type="String">Brand_value</Data></Cell>
+			<Cell><Data ss:Type="String">Investment</Data></Cell>
+			<Cell><Data ss:Type="String">current_value</Data></Cell>
+		</Row>
+
+		<Row>
+			<Cell><Data ss:Type="String">1</Data></Cell>
+			<Cell><Data ss:Type="String">M01</Data></Cell>
+			<Cell><Data ss:Type="Number">1</Data></Cell>
+			<Cell><Data ss:Type="String">CI01</Data></Cell>
+			<Cell><Data ss:Type="String">S01</Data></Cell>
+			<Cell><Data ss:Type="Number">30</Data></Cell>
+			<Cell><Data ss:Type="String">ICICI</Data></Cell>
+			<Cell><Data ss:Type="String">ICI</Data></Cell>
+			<Cell><Data ss:Type="String">CI01</Data></Cell>
+			<Cell><Data ss:Type="String">High</Data></Cell>
+			<Cell><Data ss:Type="String">Moderate</Data></Cell>
+			<Cell><Data ss:Type="String">Low</Data></Cell>
+			<Cell><Data ss:Type="Number">2000</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">2</Data></Cell>
+			<Cell><Data ss:Type="String">M02</Data></Cell>
+			<Cell><Data ss:Type="Number">2</Data></Cell>
+			<Cell><Data ss:Type="String">CI01</Data></Cell>
+			<Cell><Data ss:Type="String">S03</Data></Cell>
+			<Cell><Data ss:Type="Number">40</Data></Cell>
+			<Cell><Data ss:Type="String">BPL</Data></Cell>
+			<Cell><Data ss:Type="String">BPL</Data></Cell>
+			<Cell><Data ss:Type="String">CI01</Data></Cell>
+			<Cell><Data ss:Type="String">Moderate</Data></Cell>
+			<Cell><Data ss:Type="String">Low</Data></Cell>
+			<Cell><Data ss:Type="String">Low</Data></Cell>
+			<Cell><Data ss:Type="Number">3000</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">3</Data></Cell>
+			<Cell><Data ss:Type="String">M03</Data></Cell>
+			<Cell><Data ss:Type="Number">2</Data></Cell>
+			<Cell><Data ss:Type="String">CI02</Data></Cell>
+			<Cell><Data ss:Type="String">S04</Data></Cell>
+			<Cell><Data ss:Type="Number">50</Data></Cell>
+			<Cell><Data ss:Type="String">AGF</Data></Cell>
+			<Cell><Data ss:Type="String">AGF</Data></Cell>
+			<Cell><Data ss:Type="String">CI02</Data></Cell>
+			<Cell><Data ss:Type="String">Low</Data></Cell>
+			<Cell><Data ss:Type="String">High</Data></Cell>
+			<Cell><Data ss:Type="String">Low</Data></Cell>
+			<Cell><Data ss:Type="Number">4000</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">5</Data></Cell>
+			<Cell><Data ss:Type="String">M05</Data></Cell>
+			<Cell><Data ss:Type="Number">4</Data></Cell>
+			<Cell><Data ss:Type="String">CI02</Data></Cell>
+			<Cell><Data ss:Type="String">S07</Data></Cell>
+			<Cell><Data ss:Type="Number">50</Data></Cell>
+			<Cell><Data ss:Type="String">AGF</Data></Cell>
+			<Cell><Data ss:Type="String">AGF</Data></Cell>
+			<Cell><Data ss:Type="String">CI02</Data></Cell>
+			<Cell><Data ss:Type="String">Low</Data></Cell>
+			<Cell><Data ss:Type="String">High</Data></Cell>
+			<Cell><Data ss:Type="String">Low</Data></Cell>
+			<Cell><Data ss:Type="Number">4000</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">4</Data></Cell>
+			<Cell><Data ss:Type="String">M04</Data></Cell>
+			<Cell><Data ss:Type="Number">3</Data></Cell>
+			<Cell><Data ss:Type="String">CI03</Data></Cell>
+			<Cell><Data ss:Type="String">S05</Data></Cell>
+			<Cell><Data ss:Type="Number">70</Data></Cell>
+			<Cell><Data ss:Type="String">AJH</Data></Cell>
+			<Cell><Data ss:Type="String">AJH</Data></Cell>
+			<Cell><Data ss:Type="String">CI03</Data></Cell>
+			<Cell><Data ss:Type="String">low</Data></Cell>
+			<Cell><Data ss:Type="String">Moderate</Data></Cell>
+			<Cell><Data ss:Type="String">Low</Data></Cell>
+			<Cell><Data ss:Type="Number">1200</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">6</Data></Cell>
+			<Cell><Data ss:Type="String">M06</Data></Cell>
+			<Cell><Data ss:Type="Number">4</Data></Cell>
+			<Cell><Data ss:Type="String">CI03</Data></Cell>
+			<Cell><Data ss:Type="String">S08</Data></Cell>
+			<Cell><Data ss:Type="Number">60</Data></Cell>
+			<Cell><Data ss:Type="String">CVB</Data></Cell>
+			<Cell><Data ss:Type="String">CVB</Data></Cell>
+			<Cell><Data ss:Type="String">CI03</Data></Cell>
+			<Cell><Data ss:Type="String">Moderate</Data></Cell>
+			<Cell><Data ss:Type="String">Low</Data></Cell>
+			<Cell><Data ss:Type="String">Low</Data></Cell>
+			<Cell><Data ss:Type="Number">5000</Data></Cell>
+		</Row>	</Table>
+</Worksheet>
+</Workbook>

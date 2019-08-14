@@ -1,0 +1,124 @@
+create table STOCK_DECISION (
+Parameter_Value int NOT NULL,
+Stock_Name varchar(20),
+Ticker_symbol varchar(10) NOT NULL PRIMARY KEY,
+Cat_Id varchar(15) NOT NULL,
+Risk varchar(10),
+Brand_value varchar(10),
+Investment  varchar(10),
+current_value int NOT NULL)
+
+insert into STOCK_DE values (30, 'ICICI', 'ICI', 'CI01', 'High', 'Moderate', 'Low' , 2000);
+insert into STOCK_DE values (40, 'BPL', 'BPL', 'CI01', 'Moderate', 'Low', 'Low' , 3000);
+insert into STOCK_DE values (50, 'AGF', 'AGF', 'CI02', 'Low', 'High', 'Low' , 4000);
+insert into STOCK_DE values (60, 'CVB', 'CVB', 'CI03', 'Moderate', 'Low', 'Low' , 5000);
+insert into STOCK_DE values (70, 'AJH', 'AJH', 'CI03', 'low', 'Moderate', 'Low' , 1200);
+-------------------------------------------------------------------------------------------
+
+create table Client_Category (
+Client_ID	   int NOT NULL  ,    
+Cat_ID	       Varchar(25) NOT NULL ,    
+Strategy_ID	   Varchar2(25) NOT NULL ,     
+Brand_Value	   Varchar(25) NOT NULL ,    
+Investment	   Varchar(25) NOT NULL ,    
+Parameter_Value int NOT NULL )
+
+insert into Strategy_Category values (01,'CI01', 'S01', 'Moderate', 'Low' ,30);
+insert into Strategy_Category values (01,'CI03', 'S02', 'High', 'Low',30);
+insert into Strategy_Category values (02,'CI01', 'S03', 'Low', 'Low' ,30
+insert into Strategy_Category values (02,'CI02', 'S04', 'High', 'Low',50);
+insert into Strategy_Category values (03,'CI03', 'S05', 'Moderate', 'Low',60);
+insert into Strategy_Category values (03,'CI01', 'S06', 'Moderate', 'Low' ,40);
+insert into Strategy_Category values (04,'CI02', 'S07', 'High', 'Low',40);
+insert into Strategy_Category values (04,'CI03', 'S08', 'Low', 'Low' ,50);
+-------------------------------------------------------------------------------
+
+create table Client_Category ( 
+Client_ID	   int NOT NULL  ,    
+Cat_ID	       Varchar(25) NOT NULL ,
+Brokerage_Rate  int NOT NULL)
+
+insert into Client_Category values (01,'CI01', 1000) ;
+insert into Client_Category values (01,'CI03', 1000) ;
+insert into Client_Category values (02,'CI01', 1000) ;
+insert into Client_Category values (02,'CI02', 1000) ;
+insert into Client_Category values (03,'CI03', 1000) ;
+insert into Client_Category values (03,'CI01', 1000) ;
+insert into Client_Category values (04,'CI02', 1000) ;
+insert into Client_Category values (04,'CI03', 1000) ;
+-----------------------------------------------------------------------------------
+
+---------innerJOIN of client_strategy and Stock_decision--------------------------------------------------------------------------------------
+QUERY
+select * from STOCK_DE S 
+inner join Client_Category C
+on S.Cat_ID = C.Cat_ID 
+order by C.Cat_ID;
+
+1	CI01	BPL	Low	  Low	BPL	    40	mod	    3000	CI01	1000
+1	CI01	ICI	mod	  Low	ICICI   30	High	2000	CI01	1000
+2	CI01	BPL	Low	  Low	BPL	    40	mod	    3000	CI01	1000
+2	CI01	ICI	mod	  Low	ICICI   30	High	2000	CI01	1000
+3	CI01	BPL	Low	  Low	BPL	    40	mod	    3000	CI01	1000
+3	CI01	ICI	mod	  Low	ICICI   30	High	2000	CI01	1000
+2	CI02	AGF	High  Low	AGF	    50	Low	    4000	CI02	1000
+4	CI02	AGF	High  Low	AGF	    50	Low	    4000	CI02	1000
+1	CI03	AJH	mod	  Low	AJH	    70	low	    1200	CI03	1000
+1	CI03	CVB	Low	  Low	CVB	    60	mod	    5000	CI03	1000
+3	CI03	AJH	mod	  Low	AJH	    70	low	    1200	CI03	1000
+3	CI03	CVB	Low	  Low	CVB	    60	mod	    5000	CI03	1000
+4	CI03	AJH	mod	  Low	AJH	    70	low	    1200	CI03	1000
+4	CI03	CVB	Low	  Low	CVB	    60	mod	    5000	CI03	1000
+
+------------------------------------------------------------------------
+                                
+
+
+
+---------The query for Stock_Match Table---------------------
+
+select C.CLient_ID, S.Cat_ID, St.Strategy_ID, S.* 
+from STOCK_DE S 
+inner join Client_Category C 
+inner join Strategy_Category St
+on S.Cat_ID = C.Cat_ID 
+And C.CLient_ID = St.CLient_ID
+and C.Cat_ID = St.Cat_ID
+and S.Brand_Value = St.Brand_Value
+and S.Investment = St.Investment
+and S.Parameter_Value >= St.Parameter_Value
+order by C.Cat_ID;
+
+---------The query for Stock_Match Table (SUCCESSFUL)---------------------
+create table client_stock_match AS
+(select (@cnt := @cnt +1) Match_id, concat('M0', @cnt) AS MATCHID , C.CLient_ID, S.Cat_ID, St.Strategy_ID, S.* 
+from STOCK_DE S 
+inner join Client_Category C 
+inner join Strategy_Category St
+on S.Cat_ID = C.Cat_ID 
+And C.CLient_ID = St.CLient_ID
+and C.Cat_ID = St.Cat_ID
+and S.Brand_Value = St.Brand_Value
+and S.Investment = St.Investment
+and S.Parameter_Value >= St.Parameter_Value
+order by C.Cat_ID);
+
+
+Match_id	MATCHID	CLient_ID	Cat_ID	Strategy_ID	    Parameter_Value	Stock_Name	Ticker_symbol	Cat_Id	Risk	Brand_value	Investment	current_value
+1	           M01	       1	CI01	S01	                      30	ICICI	             ICI	CI01	High	  Moderate	  Low	          2000
+2	           M02	       2	CI01	S03	                      40	BPL	                 BPL	CI01	Moderate	Low	      Low	          3000
+3	           M03	       2	CI02	S04	                      50	AGF	                 AGF	CI02	Low	        High	  Low	          4000
+5	           M05	       4	CI02	S07	                      50	AGF	                 AGF	CI02	Low	        High	  Low	          4000
+4	           M04	       3	CI03	S05	                      70	AJH	                 AJH	CI03	low	       Moderate   Low	          1200
+6	           M06	       4	CI03	S08	                      60	CVB	                 CVB	CI03	Moderate	Low	      Low	          5000
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Create table Client_Stock_Proposal as
+(select CC.Brokerage_Rate, CS.MATCHID, CS.Stock_Name, CS.Ticker_symbol, CS.Cat_Id, CS.Current_value, CS.Client_Id 
+from client_stock_match CS inner join Client_Category CC 
+on CC.Client_Id = CS.Client_Id and CS.Cat_Id = CC.Cat_Id);
+
+select * from Client_Stock_Proposal;
+
+select * from Client_Category;
+
+select * from client_stock_match;

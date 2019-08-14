@@ -1,0 +1,7 @@
+Match_id,MATCHID,CLient_ID,Cat_ID,Strategy_ID,Parameter_Value,Stock_Name,Ticker_symbol,Cat_Id,Risk,Brand_value,Investment,current_value
+1,M01,1,CI01,S01,30,ICICI,ICI,CI01,High,Moderate,Low,2000
+2,M02,2,CI01,S03,40,BPL,BPL,CI01,Moderate,Low,Low,3000
+3,M03,2,CI02,S04,50,AGF,AGF,CI02,Low,High,Low,4000
+5,M05,4,CI02,S07,50,AGF,AGF,CI02,Low,High,Low,4000
+4,M04,3,CI03,S05,70,AJH,AJH,CI03,low,Moderate,Low,1200
+6,M06,4,CI03,S08,60,CVB,CVB,CI03,Moderate,Low,Low,5000
